@@ -36,7 +36,7 @@ This is a `.html` presentation created in `R Markdown` with `ioslides`.
 
 (It's been written in a [.Rmd](http://rmarkdown.rstudio.com) file, and we generated .html slides by 'knitting' it in Rstudio.)
 
-You can check out the code used to make these slides at the [Workshop repo](https://github.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH) on Github, and adapt it for your own presentations if you like - I've got a MIT Licence on the repo, which means: 
+You can check out the code used to make these slides at the [Workshop repo](https://github.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH) on Github (and the [workshop materials it's based on](https://bit.ly/wallace-lab-git)), and adapt it for your own presentations if you like - I've got a MIT Licence on the repo, which means: 
 
 *"Basically, you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source."*
 
@@ -50,7 +50,8 @@ Source: [tl;drLegal](https://tldrlegal.com/license/mit-license)
 * The Git Workflow
 * Issue Tickets, Bells & Whistles
 * Branching
-* Writing Papers 
+* Pull Requests (PRs)
+* Things I wish I knew about working in a team with git & github 18 months ago...
 * Troubleshooting:  
 * Questions
 
@@ -136,6 +137,26 @@ Be consise & consistent!
 * add Add the most useful labels / create your own
 * check with people before randomly assigning them issues! :)
 
+## \#DYUTIT?
+
+"Did You Update The Issue Ticket?"
+
+Does a relevant issue ticket already exist?  
+  * If NO: make a new one (see previous advice on how to write a good one!)  
+  * If YES: fine, proceed...  
+
+Is the issue ticket up-to-date with information from the latest work?  
+  * If YES: all is well!.  
+  * If NO: update it!  
+
+## Why is \#DYUTIT? a helpful project motto?
+
+* It's super frustrating when nobody can access (or know about) all your hard work fixing an issue
+* It's super frustrating if you spend time working on an issue someone else already fixed, but you didn't know had been fixed
+* Breaks between working on a task mean you might forget what work you've done - future you won't thank past you for not leaving any breadcrumbs!
+* Gives an opportunity for other team members to stay up-to-date on what's happening
+* Also an opportunity for them to solve problems you've run into!
+
 ## Branching
 
 <div class="centered">
@@ -180,7 +201,7 @@ Examples: issue branch, function branch, figure branch, documentation branch
 
 Commits are checkpoints for sub-tasks, often no more than 10 lines of code. 
 
-Topic branches are checkpoints for tasks, with one or more commit.
+Issue branches are ways of isolating out work done on specific tasks (or issues), with one or more commit.
 
 ```{bash eval = FALSE, echo = TRUE}
 git checkout -b quality_control
@@ -230,11 +251,17 @@ This multiplies again if you originally forked from someone else!
 
 - Don't commit unfinished code and merge incomplete branches
 
-- Update your main branch everyday (typically using git rebase)
+- 'Git Pull' regularly and before starting any new work (avoids conflicts later)
 
 - Keep topic branches short and merge-delete often!
 
 - Ensure commits are made in relevant branches
+
+
+## Pull Requests (PRs)
+
+TODO
+
 
 # Troubleshooting
 
@@ -244,7 +271,7 @@ This multiplies again if you originally forked from someone else!
 git stash [push]
 ```
 
-Reverts the code back to the last commit and saves changes in temp file.
+Reverts the code back to the last commit and saves changes in a temp file.
 
 Perfect for when you realise you're working in the wrong branch.
 
@@ -285,3 +312,5 @@ GitHub Guides
 
 
 ## Questions
+
+If you have any problems or questions going forward as you start to use git & github, feel free to give me a shout!
