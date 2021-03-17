@@ -1,7 +1,7 @@
 ---
 title: "Ed-DaSH Git Workshop"
 author: "Flic Anderson"
-date: "26/11/2020"
+date: "18/03/2021"
 output:
   ioslides_presentation:
     logo: https://assets.stickpng.com/images/5847f981cef1014c0b5e48be.png
@@ -42,17 +42,16 @@ You can check out the code used to make these slides at the [Workshop repo](http
 
 Source: [tl;drLegal](https://tldrlegal.com/license/mit-license)
 
-# Outline: 
+#  Things I wish I'd known sooner about working in a team with Git & GitHub
 
 ## Outline: 
 
 * Intro to Git, GitHub
 * The Git Workflow
-* Issue Tickets, Bells & Whistles
+* Issue Tickets (\+ Bells & Whistles)
 * Branching
 * Pull Requests (PRs)
-* Things I wish I knew about working in a team with git & github 18 months ago...
-* Troubleshooting:  
+* Helpful Materials
 * Questions
 
 # Intro:
@@ -95,6 +94,30 @@ Push
 
 Pull Request
 
+Merge
+
+
+<div class="notes">
+
+Fork: when we 'copy' a pre-existing repository to our GitHub account from a different one so we can work on it. This happens on GitHub
+
+Clone: when we download / copy a repository to our LOCAL machine (usually from a remote one hosted on GitHub/etc.). We get the info from GitHub and do the clone onto a location on our local machine.
+
+Branch: when we make another version of the existing code which will let us make changes and test new features without breaking anything else
+
+Edit: when we change existing files or add new files 
+
+Add: when we move selected (edited) files to the 'staging area' locally (this lets us notify git that we want to record any changes we've made to this file 'now')
+
+Commit: when we add a 'commit message' to explain our changes. This command 'snapshots' our changes to these selected files.
+
+Push: when we 'push' these snapshots of changes from our LOCAL machine to our REMOTE repository (on GitHub) - this makes them visible to everyone!
+
+Pull Request: when we want to add the changes we've made in our branch to the main 'codebase' (or file-base!) of the repository officially (when it's finished!)
+
+Merge: when we've approved the pull request, our code gets 'merged' into the main codebase and the changes overwrite/add to the existing files (depending on repository permissions).
+
+</div>
 
 ## Git Workflow
 
@@ -121,10 +144,33 @@ Be consise & consistent!
 
 * GitHub tool: create 'issues' within a repo, where you can add notes.
 * markdown format - can include code snippets, formatting, links, emojis!
-* @-tag in other GitHub users ("@FlicAnderson, do you get this 404 error before?")
+* @-tag in other GitHub users ("@FlicAnderson, did you get this 404 error before?")
 * assign labels to issues like "help wanted", "bug", "question". 
 * link issues with pull requests, or keep them separate. 
 * once the issue is solved, you can mark it as closed!
+
+## Issue Tickets
+
+<div class="centered">
+```{r, out.width = "650"}
+knitr::include_graphics("images/partycat.png")
+``` 
+</div>
+
+<div class="notes">
+
+https://guides.github.com/features/issues/
+
+Can use issue tickets by just creating basic message-threads, but the 'bells and whistles' are the fancy add-ons which add a lot of value when working in teams
+ * @-tags help keep your team updated, involved & gets the info to those who need it
+ * labels help you organise different types of tasks (e.g. project documentation vs lesson-materials)
+ * linking issues (can use #issuenumber notation to link to other issues)
+ * linking PRs can help keep track of what's what
+ * assigning tasks: who is working on this issue?
+ * milestones: can select a few issues which relate to achieving a particular milestone & get progress-tracking!
+ * kanban boards for the project: can do some cool project-management progress tracking by selecting the project, and assigning the issue into "To Do", "In Progress" or "Done" (and others) - helps keep track of what's being worked on actively
+
+</div>
 
 ## How To Write A Good Issue Ticket
 
@@ -134,7 +180,7 @@ Be consise & consistent!
 * tag in colleagues who might offer insights, or answer any questions
 * remember to update the issue regularly as progress happens!  
 * link to other issues in that repo using the hashtag & issue number e.g. `#42`
-* add Add the most useful labels / create your own
+* add the most useful labels / create your own
 * check with people before randomly assigning them issues! :)
 
 ## \#DYUTIT?
@@ -142,20 +188,33 @@ Be consise & consistent!
 "Did You Update The Issue Ticket?"
 
 Does a relevant issue ticket already exist?  
-  * If NO: make a new one (see previous advice on how to write a good one!)  
+  * If NO: make a new one (see "how to write a good one"!)  
   * If YES: fine, proceed...  
 
 Is the issue ticket up-to-date with information from the latest work?  
-  * If YES: all is well!.  
+  * If YES: all is well!  
   * If NO: update it!  
 
 ## Why is \#DYUTIT? a helpful project motto?
 
+**AVOID:**  
+* "I didn't know you'd already fixed that" / "I already spent hours fixing that"  
+* "I can't remember what was I trying to do here??"  
+* "I didn't think this was a priority for anyone else"  
+
+**GAIN:**  
+* "oh, hey, I have an idea for this fix"  
+* "this reminds me of something I think might be related, let's link them"  
+* "it makes sense to fix this alongside [other issue]"  
+
+<div class="notes">
 * It's super frustrating when nobody can access (or know about) all your hard work fixing an issue
 * It's super frustrating if you spend time working on an issue someone else already fixed, but you didn't know had been fixed
 * Breaks between working on a task mean you might forget what work you've done - future you won't thank past you for not leaving any breadcrumbs!
 * Gives an opportunity for other team members to stay up-to-date on what's happening
 * Also an opportunity for them to solve problems you've run into!
+</div>
+
 
 ## Branching
 
@@ -173,46 +232,49 @@ It consists of separating projects into larger objectives and smaller, manageabl
 
 It also enables you to prototype changes in isolation, minimising risk, and provides checkpoints to quickly return to when things do go wrong.
 
-## Branching | Long vs short
+<div class="notes">
 
-<b> Long Branch </b>
+Branches: long vs short:
+ * long branches: 
+  - can exist for months/be permanent (e.g. staging, 'develop'/prototype, manuscript chapter)
+  - isolate large tasks or help with gate-keeping to avoid work being merged into 'main' before it's ready
+  - may include a lot of changes to the repository
+ * short branch: 
+  - issue/topic/feature branch
+  - smaller well-defined issue or feature addition
+  - for short-term tasks
+  - small changes in code
 
-Long branches can exist for months or are even permanent features of a repo. 
+* commits vs branches: 
+Commits are 'save checkpoints' for sub-tasks (e.g. "update abstract section in paper manuscript". Branches are the ways of isolating the work on a specific task and may contain several commits (e.g. "reviewer-changes" might be made in a branch for a manuscript, collecting each 'change' in separate commits))
 
-They can be merged into the main branch multiple times, possibly containing updates on thousands of lines of code. 
+</div>
 
-They are used to isolate large tasks or allow for gate-keeping for projects with continuous updates.
 
-Examples: Staging branch, prototyping branch, software release branch, manuscript chapter branch
-
-## Branching | Long vs short
-
-<b> Short (or Topic) Branch </b>
-
-Short branches exist for hours or weeks, they may consist of only one commit. 
-
-Once merged with the main branch or a long branch they are deleted. 
-
-They enclose small changes in code and separate long term goals into short term tasks.
-
-Examples: issue branch, function branch, figure branch, documentation branch
+## Branching | Play well with others
 
 ## Branching | Commits vs branches
 
-Commits are checkpoints for sub-tasks, often no more than 10 lines of code. 
-
-Issue branches are ways of isolating out work done on specific tasks (or issues), with one or more commit.
-
 ```{bash eval = FALSE, echo = TRUE}
-git checkout -b quality_control
+# create new branch called "reviewer-changes" & move to that branch
+git checkout -b reviewer-changes
 
-git add check_microarray_data.R
+# add an edited file to git's version control 'staging' area 
+git add Article_Manuscript.Rmd
 
-git commit -m "function to create
-tibble from microarray data"
+# 'commit' the changes made to this file with a descriptive message
+git commit -m "update abstract of manuscript to include study size"
 
-git commit -am "ggplot functions to display raw data"
 ```
+
+## Branching | Local vs remote
+
+GitHub is an amazing collaborative tool, but significantly complicates code management.
+
+Branches and commits will appear on the remote repo that are not on your local repo (and vice versa)
+
+This multiplies again if you originally forked from someone else!
+
 
 ## Branching | Where am I?
 
@@ -225,12 +287,14 @@ git commit -am "ggplot functions to display raw data"
 ```
 
 ```{bash eval=FALSE, echo =TRUE}
+# show local branches: 
 git branch
 ```
 ```{bash eval=FALSE, echo =TRUE, class.source = "watch-out"}
   master 
 ```
 ```{bash eval=FALSE, echo =TRUE}
+# show local branches AND the remote branches (on GitHub)
 git branch -a
 ```
 ```{bash eval=FALSE, echo =TRUE, class.source = "watch-out"}
@@ -239,31 +303,87 @@ git branch -a
   remotes/upstream/staging
 ```
 
-## Branching | Local vs remote
 
-GitHub is an amazing collaborative tool, but significantly complicates code management.
+<div class="notes">
 
-Branches and commits will appear on the remote repo that are not on your local repo (and vice versa)
+`git branch` will show you all the local branches your repo has
+`git branch -a` lists local and remote-tracking branches (ie branches on the GitHub repo too)
 
-This multiplies again if you originally forked from someone else!
+</div>
+
 
 ## Branching | Tips for code hygiene
 
-- Don't commit unfinished code and merge incomplete branches
+- Don't commit unfinished code or merge incomplete branches
 
-- 'Git Pull' regularly and before starting any new work (avoids conflicts later)
+- Use `git pull` regularly before starting any new work locally (avoids conflicts later)
 
-- Keep topic branches short and merge-delete often!
+- Check which branch you're on frequently with `git status` or `git branch`
 
-- Ensure commits are made in relevant branches
+- Keep issue/feature branches short and merge-then-delete often!
+
+<div class="notes">
+
+* think of commits as save checkpoints, but always save "at the end of a level" :)
+* always merge finished work - you wouldn't send your team a half-written email?
+* avoid conflicts with regular git pulls to get any new remote work from GitHub before you start new work locally which might cause issues where files start to diverge!
+* don't get lost in the forest check which branch you're on frequently!
+* ensure commits are made in relevant branches
+* avoid scope-creep! Think about how to write issue tickets that will help keep the fix contained!
+
+</div>
 
 
 ## Pull Requests (PRs)
 
-TODO
+Pull Requests are a key feature of working collaboratively with version control.
 
+"Here's some work I've done, please include it with the rest!"
+
+* a pull request might submit all the work needed to close an issue ticket (it's easy to link the PR & issue number so closing one closes the other auto-magically!)
+* an opportunity to review the edits (can assign someone to review!)
+* you submit a branch for a pull request & show which branch you'd like it to be merged into
+* will find out if there are any conflicts between files
+* can be a great way of getting wider community involvement (e.g. Carpentries use PRs for lesson contributions - lots more opportunity for help compared to the immediate lesson team)
+
+
+
+## Pull Requests (PRs)
+
+<div class="centered">
+```{r, out.width = "650"}
+knitr::include_graphics("images/partycat.png")
+``` 
+</div>
+
+
+## Helpful guides
+
+Git cheatsheet
+
+[https://education.github.com/git-cheat-sheet-education.pdf](https://education.github.com/git-cheat-sheet-education.pdf)
+
+Git documentation
+
+[https://git-scm.com/doc](https://git-scm.com/doc)
+
+GitHub Guides
+
+[https://guides.github.com/](https://guides.github.com/)
+
+Software Carpentry material
+
+[Version Control With Git](https://swcarpentry.github.io/git-novice/)
+     
+# Questions?
 
 # Troubleshooting
+
+## Troubleshooting | Avoiding Merge Conflicts in PRs
+
+When creating a pull request, it's worth **locally** merging the branch your work will merge into on GitHub to make sure that there'll be no conflicts (caused by differences between versions of the same files).
+
+If we were creating a pull request for the branch `reviewer-changes`/// TODO
 
 ## Troubleshooting | Stashing
 
@@ -295,22 +415,3 @@ git cherry-pick e8cc44d3ce4b01fb2d211bffec0c69cbaa0d80f4
 ```
 
 Some cases my require you to select exactly which commits to merge (rather than a whole branch)
-
-## Troubleshooting | Helpful guides
-
-Git cheatsheet
-
-[https://education.github.com/git-cheat-sheet-education.pdf](https://education.github.com/git-cheat-sheet-education.pdf)
-
-Git documentation
-
-[https://git-scm.com/doc](https://git-scm.com/doc)
-
-GitHub Guides
-
-[https://guides.github.com/](https://guides.github.com/)
-
-
-## Questions
-
-If you have any problems or questions going forward as you start to use git & github, feel free to give me a shout!
