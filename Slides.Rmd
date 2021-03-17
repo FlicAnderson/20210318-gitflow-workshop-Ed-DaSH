@@ -415,11 +415,11 @@ Allow members of the project community to help contribute to the codebase.
 
 ## Pull Requests (PRs)
 
-<div class="centered">
-```{r, out.width = "650"}
-knitr::include_graphics("images/partycat.png")
-``` 
-</div>
+<!-- <div class="centered"> -->
+<!-- ```{r, out.width = "650"} -->
+<!-- knitr::include_graphics("") -->
+<!-- ```  -->
+<!-- </div> -->
 
 
 ## Helpful guides
