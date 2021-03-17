@@ -131,17 +131,23 @@ knitr::include_graphics("https://res.cloudinary.com/practicaldev/image/fetch/s--
 
 Commits are the way in which we save a snapshot of the changes in all the files our repository is watching. 
 
+Don't commit big files everything - add things to `.gitignore` file
+
 Each commit gets a 'hash' which lets you refer to specific commits (e.g. [`fcd1dba`](https://github.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/commit/fcd1dba23d1d60e8730a1017dc504d199f4ad2b8))
 
 <div class="centered">
-```{r, out.width = "400"}
-knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/main/images/resolved_conflict.png")
+```{r, out.width = "750"}
+knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/main/images/commit_fileview.png")
 ``` 
 
+## Commits
 
-View side-by-side changes included in commits
+View side-by-side changes included in commits on GitHub:
 
-Don't commit everything - avoid commiting big files by adding to `.gitignore` file
+<div class="centered">
+```{r, out.width = "750"}
+knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/main/images/commit_sidebysideview.png")
+``` 
 
 <div class="notes">
 
@@ -176,9 +182,11 @@ Be consise & consistent!
 
 ## Issue Tickets
 
+issue #1: 
+
 <div class="centered">
 ```{r, out.width = "650"}
-knitr::include_graphics("images/partycat.png")
+knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/main/images/issue_firstissue.png")
 ``` 
 </div>
 
@@ -195,6 +203,16 @@ Can use issue tickets by just creating basic message-threads, but the 'bells and
  * milestones: can select a few issues which relate to achieving a particular milestone & get progress-tracking!
  * kanban boards for the project: can do some cool project-management progress tracking by selecting the project, and assigning the issue into "To Do", "In Progress" or "Done" (and others) - helps keep track of what's being worked on actively
 
+</div>
+
+## Issue Tickets
+
+Managing Your Issue Tickets with A Project Kanban Board:
+
+<div class="centered">
+```{r, out.width = "650"}
+knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/main/images/project_kanban.png")
+``` 
 </div>
 
 ## How To Write A Good Issue Ticket
@@ -216,8 +234,8 @@ Does a relevant issue ticket already exist?
   * If NO: make a new one (see "how to write a good one"!)  
   * If YES: fine, proceed...  
 
-Is the issue ticket up-to-date with information from the latest work?  
-  * If YES: all is well!  
+Is the issue ticket up-to-date with info from the latest work?  
+  * If YES: all is well :)  
   * If NO: update it!  
 
 ## Why is \#DYUTIT? a helpful project motto?
@@ -240,20 +258,11 @@ Is the issue ticket up-to-date with information from the latest work?
 * Also an opportunity for them to solve problems you've run into!
 </div>
 
-
 ## Branching
 
-<div class="centered">
-```{r, out.width = "700"}
-knitr::include_graphics("https://raw.githubusercontent.com/DimmestP/20201127-gitflow-workshop/sam_slide/images/branching_image.svg")
-``` 
-</div>
+Branching helps bring: good coding practice and good project management. 
 
-## Branching
-
-The concept of branching is a combination of good coding practice and good project management. 
-
-It consists of separating projects into larger objectives and smaller, manageable tasks. 
+Separates projects into larger objectives and smaller, manageable tasks. 
 
 It also enables you to prototype changes in isolation, minimising risk, and provides checkpoints to quickly return to when things do go wrong.
 
@@ -275,8 +284,30 @@ Commits are 'save checkpoints' for sub-tasks (e.g. "update abstract section in p
 
 </div>
 
-
 ## Branching | Play well with others
+
+Working on separate branches lets you include fixes and changes others are working on, without discarding your own changes. 
+<div class="centered">
+```{r, out.width = "600"}
+knitr::include_graphics("https://raw.githubusercontent.com/DimmestP/20201127-gitflow-workshop/sam_slide/images/branching_image.svg")
+``` 
+</div>
+
+<div class="notes">
+
+In a recent riboviz hackathon, the 3 groups (Edinburgh, Rutgers & Berkeley) were working for a week on making progress on issues. 
+
+We'd assigned each group issue tickets to work on, and I was working with colleagues at Rutgers on riboviz/#239 (visualisation code).  
+
+I created `visualization-239-FlicAnderson` branch from a colleague Peter's branch `visualization-239-p6t` which containing his visualisation code. 
+
+In my branch, I then worked on integrating that visualisation code with the rest of the workflow, and got a prototype working. 
+
+Peter was then able to merge my code from my branch into his branch, as well as other fixes for other issues from branches other colleagues were working on. 
+
+It does mean you need to write code that works on others' computers, but after a bit of discussion on the issue ticket about how to solve this, we got things working at both ends"
+
+</div>
 
 ## Branching | Commits vs branches
 
@@ -298,7 +329,9 @@ GitHub is an amazing collaborative tool, but significantly complicates code mana
 
 Branches and commits will appear on the remote repo that are not on your local repo (and vice versa)
 
-This multiplies again if you originally forked from someone else!
+This multiplies again if you originally forked the repo from someone else!
+
+Remember to keep pulling down others' work, and keep your local repos up to date
 
 
 ## Branching | Where am I?
@@ -366,6 +399,8 @@ Pull Requests are a key feature of working collaboratively with version control.
 *"Here's some work I've done, please include it with the rest!"*
 
 Can link to issue tickets (close both auto-magically!)
+
+Good opportunity for review
 
 Allow members of the project community to help contribute to the codebase.
 
