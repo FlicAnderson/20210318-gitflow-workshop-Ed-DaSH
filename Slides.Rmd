@@ -182,7 +182,7 @@ Be consise & consistent!
 
 ## Issue Tickets
 
-issue #1: 
+Anatomy of an Issue Ticket: *Example Issue #1* 
 
 <div class="centered">
 ```{r, out.width = "650"}
@@ -430,20 +430,28 @@ Alternatively, find the **"New pull request"** button.
 
 ## Pull Requests (PRs)
 
-Make sure you've selected the correct branches to merge your changes from and into!
-
-Add helpful information about what the PR includes or changes. 
+Fill out the PR info & check the branches!
 
 <div class="centered">
-```{r, out.width = "650"}
+```{r, out.width = "600"}
 knitr::include_graphics("images/open_PR.png")
 ```
 </div>
 
 ## Pull Requests (PRs)
+Link related issues to the PR
 
 <div class="centered">
-```{r, out.width = "650"}
+```{r, out.width = "600"}
+knitr::include_graphics("images/link_PR.png")
+```
+</div>
+
+## Pull Requests (PRs)
+Press big green **"Merge pull request"** button to complete!  
+
+<div class="centered">
+```{r, out.width = "600"}
 knitr::include_graphics("images/merged_PR.png")
 ```
 </div>
