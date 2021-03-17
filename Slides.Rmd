@@ -30,6 +30,12 @@ knitr::opts_chunk$set(echo = FALSE)
   }
 </style>
 
+<style type="text/css">
+slides > slide:not(.nobackground):after {
+  content: '';
+}
+</style>
+
 ## HOW TO (RE-)USE THIS MATERIAL
 
 This is a `.html` presentation created in `R Markdown` with `ioslides`. 
@@ -48,7 +54,7 @@ Source: [tl;drLegal](https://tldrlegal.com/license/mit-license)
 
 * Intro to Git, GitHub
 * The Git Workflow
-* Issue Tickets (\+ Bells & Whistles)
+* Issue Tickets
 * Branching
 * Pull Requests (PRs)
 * Helpful Materials
@@ -162,7 +168,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318
 
 `git commit -m "..."`
 
-Be consise & consistent!
+Be concise & consistent!
 
 * WHAT did you do (e.g. fix, rework, add, update)
 * WHERE (e.g. filename, function name, section of paper, variable)
