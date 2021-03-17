@@ -282,6 +282,8 @@ Branches: long vs short:
 * commits vs branches: 
 Commits are 'save checkpoints' for sub-tasks (e.g. "update abstract section in paper manuscript". Branches are the ways of isolating the work on a specific task and may contain several commits (e.g. "reviewer-changes" might be made in a branch for a manuscript, collecting each 'change' in separate commits))
 
+* Select the right branch on GitHub using the dropdown on the code page for the repo to make sure you're looking at the right versions of files! You WILL forget, but try not to, or get into the habit of checking this regularly :)
+
 </div>
 
 ## Branching | Play well with others
@@ -361,7 +363,6 @@ git branch -a
   remotes/upstream/staging
 ```
 
-
 <div class="notes">
 
 `git branch` will show you all the local branches your repo has
@@ -415,12 +416,37 @@ Allow members of the project community to help contribute to the codebase.
 
 ## Pull Requests (PRs)
 
-<!-- <div class="centered"> -->
-<!-- ```{r, out.width = "650"} -->
-<!-- knitr::include_graphics("") -->
-<!-- ```  -->
-<!-- </div> -->
+When you've made changes, and used `git add` and `git commit` to record them, then used `git push` to push them up to the remote GitHub repository, then you're ready to create a Pull Request. 
 
+There's often a **"Compare & pull request"** button on the code page for that branch:
+
+<div class="centered">
+```{r, out.width = "650"}
+knitr::include_graphics("images/compare_PR.png")
+```
+</div>
+
+Alternatively, find the **"New pull request"** button. 
+
+## Pull Requests (PRs)
+
+Make sure you've selected the correct branches to merge your changes from and into!
+
+Add helpful information about what the PR includes or changes. 
+
+<div class="centered">
+```{r, out.width = "650"}
+knitr::include_graphics("images/open_PR.png")
+```
+</div>
+
+## Pull Requests (PRs)
+
+<div class="centered">
+```{r, out.width = "650"}
+knitr::include_graphics("images/merged_PR.png")
+```
+</div>
 
 ## Helpful guides
 
@@ -443,6 +469,17 @@ Software Carpentry material
 # Questions?
 
 # Troubleshooting
+
+## Troubleshooting | Staying Up To Date
+
+Run `git pull` regularly to make sure you've got any newly merged or edited content from the remote branches.
+
+Luckily, git sometimes tells you if there are new commits:
+
+<div class="centered">
+```{r, out.width = "700"}
+knitr::include_graphics("images/gitpull.png")
+```
 
 ## Troubleshooting | `.gitignore`
 
