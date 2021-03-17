@@ -1,5 +1,5 @@
 ---
-title: "Ed-DaSH Git Workshop"
+title: "Ed-DaSH Workshop"
 author: "Flic Anderson"
 date: "18/03/2021"
 output:
@@ -48,7 +48,7 @@ You can check out the code used to make these slides at the [Workshop repo](http
 
 Source: [tl;drLegal](https://tldrlegal.com/license/mit-license)
 
-#  Things I wish I'd known sooner about working in a team with Git & GitHub
+#  Things I wish I'd known sooner about collaborating using Git & GitHub
 
 ## Outline: 
 
@@ -84,11 +84,11 @@ It can be used via *Command Line* (the terminal!) or via a *Graphical User Inter
 
 ## Git Workflow {.flexbox .vcenter}
 
-Fork
+(Fork)  
 
-Clone
+(Clone)
 
-Branch
+(Branch)
 
 Edit
 
@@ -127,17 +127,21 @@ Merge: when we've approved the pull request, our code gets 'merged' into the mai
 
 ## Git Workflow
 
+Git commands move file-change info between tracking states, locally and remotely.
+
 <div class="centered">
-```{r, out.width = "650"}
+```{r, out.width = "575"}
 knitr::include_graphics("https://res.cloudinary.com/practicaldev/image/fetch/s--M_fHUEqA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/128hsgntnsu9bww0y8sz.png")
 ``` 
 </div>
 
 ## Commits
 
-Commits are the way in which we save a snapshot of the changes in all the files our repository is watching. 
+Commits are the way in which we save a *snapshot of the changes* in each file our git repository tracks
 
-Don't commit big files everything - add things to `.gitignore` file
+Think of it like a video-game 'save': save at the end of each level
+
+Don't commit everything - *no big files!* - add things to `.gitignore` file
 
 Each commit gets a 'hash' which lets you refer to specific commits (e.g. [`fcd1dba`](https://github.com/FlicAnderson/20210318-gitflow-workshop-Ed-DaSH/commit/fcd1dba23d1d60e8730a1017dc504d199f4ad2b8))
 
@@ -232,17 +236,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/FlicAnderson/20210318
 * add the most useful labels / create your own
 * check with people before randomly assigning them issues! :)
 
-## \#DYUTIT?
-
-"Did You Update The Issue Ticket?"
-
-Does a relevant issue ticket already exist?  
-  * If NO: make a new one (see "how to write a good one"!)  
-  * If YES: fine, proceed...  
-
-Is the issue ticket up-to-date with info from the latest work?  
-  * If YES: all is well :)  
-  * If NO: update it!  
+# \#DYUTIT? - "Did You Update The Issue Ticket?"
 
 ## Why is \#DYUTIT? a helpful project motto?
 
@@ -253,8 +247,7 @@ Is the issue ticket up-to-date with info from the latest work?
 
 **GAIN:**  
 * "oh, hey, I have an idea for this fix"  
-* "this reminds me of something I think might be related, let's link them"  
-* "it makes sense to fix this alongside [other issue]"  
+* "this reminds me of something I think might be related"  
 
 <div class="notes">
 * It's super frustrating when nobody can access (or know about) all your hard work fixing an issue
@@ -270,7 +263,9 @@ Branching helps bring: good coding practice and good project management.
 
 Separates projects into larger objectives and smaller, manageable tasks. 
 
-It also enables you to prototype changes in isolation, minimising risk, and provides checkpoints to quickly return to when things do go wrong.
+It also enables you to prototype changes in isolation, minimising risk, and provides checkpoints to quickly return to when things go wrong.
+
+*Working on separate branches lets you include fixes and changes others are working on, without discarding your own changes.* 
 
 <div class="notes">
 
@@ -292,9 +287,8 @@ Commits are 'save checkpoints' for sub-tasks (e.g. "update abstract section in p
 
 </div>
 
-## Branching | Play well with others
+## Branching
 
-Working on separate branches lets you include fixes and changes others are working on, without discarding your own changes. 
 <div class="centered">
 ```{r, out.width = "600"}
 knitr::include_graphics("https://raw.githubusercontent.com/DimmestP/20201127-gitflow-workshop/sam_slide/images/branching_image.svg")
@@ -337,8 +331,6 @@ GitHub is an amazing collaborative tool, but significantly complicates code mana
 
 Branches and commits will appear on the remote repo that are not on your local repo (and vice versa)
 
-This multiplies again if you originally forked the repo from someone else!
-
 Remember to keep pulling down others' work, and keep your local repos up to date
 
 
@@ -357,14 +349,14 @@ Remember to keep pulling down others' work, and keep your local repos up to date
 git branch
 ```
 ```{bash eval=FALSE, echo =TRUE, class.source = "watch-out"}
-  master 
+* master 
 ```
 ```{bash eval=FALSE, echo =TRUE}
 # show local branches AND the remote branches (on GitHub)
 git branch -a
 ```
 ```{bash eval=FALSE, echo =TRUE, class.source = "watch-out"}
-  master
+* master
   remotes/upstream/master
   remotes/upstream/staging
 ```
@@ -375,29 +367,6 @@ git branch -a
 `git branch -a` lists local and remote-tracking branches (ie branches on the GitHub repo too)
 
 </div>
-
-
-## Branching | Tips for code hygiene
-
-- Don't commit unfinished code or merge incomplete branches
-
-- Use `git pull` regularly before starting any new work locally (avoids conflicts later)
-
-- Check which branch you're on frequently with `git status` or `git branch`
-
-- Keep issue/feature branches short and merge-then-delete often!
-
-<div class="notes">
-
-* think of commits as save checkpoints, but always save "at the end of a level" :)
-* always merge finished work - you wouldn't send your team a half-written email?
-* avoid conflicts with regular git pulls to get any new remote work from GitHub before you start new work locally which might cause issues where files start to diverge!
-* don't get lost in the forest check which branch you're on frequently!
-* ensure commits are made in relevant branches
-* avoid scope-creep! Think about how to write issue tickets that will help keep the fix contained!
-
-</div>
-
 
 ## Pull Requests (PRs)
 
@@ -460,6 +429,29 @@ Press big green **"Merge pull request"** button to complete!
 ```{r, out.width = "600"}
 knitr::include_graphics("images/merged_PR.png")
 ```
+</div>
+
+## Tips for Success When Collaborating With Git & Github
+
+- Don't commit unfinished code or merge incomplete branches
+
+- Use `git pull` regularly before starting any new work locally (avoids conflicts later)
+
+- Check which branch you're on frequently with `git status` or `git branch`
+
+- Keep issue/feature branches short & focused, and delete merged branches often
+
+- Make your messages & notes helpful and informative
+
+<div class="notes">
+
+* think of commits as save checkpoints, but always save "at the end of a level" :)
+* always merge finished work - you wouldn't send your team a half-written email?
+* avoid conflicts with regular git pulls to get any new remote work from GitHub before you start new work locally which might cause issues where files start to diverge!
+* don't get lost in the forest check which branch you're on frequently!
+* ensure commits are made in relevant branches
+* avoid scope-creep! Think about how to write issue tickets that will help keep the fix contained!
+
 </div>
 
 ## Helpful guides
